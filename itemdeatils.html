@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/owl.carousel.min.css" />
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script>
+  <script
+    src="https://kit.fontawesome.com/ece145a5a4.js"
+    crossorigin="anonymous"
+  ></script>
+    
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="itemdeatils.css">
+</head>
+<body>
+    <div class="header">
+        <nav class="navbar navbar-expand-mdd ">
+          <div class="log">
+            <a href="">
+              <img
+                class="logo-dark"
+                id="logo_footer"
+                src="data:image/png;base64,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"
+                alt="nft-gaming"
+              />
+              <img
+                class="logo-light"
+                id="logo_footer"
+                src="data:image/png;base64,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"
+                alt="nft-gaming"
+              />
+            </a>
+          </div>
+          <button type="button" class="navbar-togglerr text-white" data-toggle="collapse" data-target="#navbarCollapse">
+              
+              <ion-icon name="menu" class="navbar-toggler-icon"></ion-icon>
+          </button>
+      
+          <div class="collapse navbar-collapse justify-content-around mr-auto" id="navbarCollapse">
+              <div class="navbar-nav">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+               
+                <a href="activy.html" class="nav-item nav-link active">Activity</a>
+                <a href="#" class="nav-item nav-link">Community</a>
+                <a href="blog.html" class="nav-item nav-link active">Blog</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                  <!-- <div class="nav-item dropdown">
+                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Messages</a>
+                      <div class="dropdown-menu">
+                          <a href="#" class="dropdown-item">Inbox</a>
+                          <a href="#" class="dropdown-item">Sent</a>
+                          <a href="#" class="dropdown-item">Drafts</a>
+                      </div>
+                  </div> -->
+              </div>
+             
+              <div class="sc-btn-top mg-r-12 ">
+                  <a href="#" class="sc-button header-slider style style-1 wallet no-bg fl-button pri-1">
+                    <span class="yt">
+                      <span><ion-icon name="wallet" style="font-size:20px ;"></ion-icon></span>
+                      <span>Wallet connect</span>
+                    </span>
+                  </a>
+              </div>
+          </div>
+      </nav>
+      <div class="flat-title-page inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-title-heading mg-bt-12">
+                    <h1 class="heading text-center">Item Details</h1>
+                </div>
+                
+            </div>
+        </div>
+      </div>
+      </div>
+      <div class="container-fluid py-5">
+        <div class="row">
+            <div class="col-md-6 col-12">
+                <div class="content-left">
+                    <div class="media">
+                        <img src="https://axiesreact.surielementor.com/static/media/images-item-details.bfd33594035c04895bb4.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="content-right">
+                    <h2 class="style2 mt-3">“The Fantasy Flower illustration ” </h2>
+                    <div class="meta-item">
+                        <div class="left">
+                            <span class="viewed eye">
+                                <span><ion-icon name="eye-outline"></ion-icon></span>
+                                <span>255</span>
+                            </span>
+                            <span class="liked">
+                                <span><ion-icon name="heart-outline"></ion-icon></span>
+                                <span>100</span>
+                            </span>
+                        </div>
+                        <div class="right">
+                            <a class="share" href="">
+                                <ion-icon name="paper-plane-outline"></ion-icon>
+                            </a>
+                            <a class="qua" href="">
+                                <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="client-infor ">
+                        <div class="row">
+                            <div class="col-md-6 col-12 mb-3">
+                                <div class="meta-info alone">
+                                    <div class="author">
+                                        <div class="avatar">
+                                            <img src="https://axiesreact.surielementor.com/static/media/avt-8.5196d4a4839fce8a5b96.jpg" alt="">
+                                        </div>
+                                        <div class="info">
+                                            <span>Owned By</span>
+                                            <h6>
+                                                <a href="">Ralph Garraway</a>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="meta-info alone">
+                                    <div class="author">
+                                        <div class="avatar">
+                                            <img src="https://axiesreact.surielementor.com/static/media/avt-8.5196d4a4839fce8a5b96.jpg" alt="">
+                                        </div>
+                                        <div class="info">
+                                            <span>Owned By</span>
+                                            <h6>
+                                                <a href="">Ralph Garraway</a>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Habitant sollicitudin faucibus cursus lectus pulvinar dolor non ultrices eget. Facilisi lobortisal morbi fringilla urna amet sed ipsum vitae ipsum malesuada. Habitant sollicitudin faucibus cursus lectus pulvinar dolor non ultrices eget. Facilisi lobortisal morbi fringilla urna amet sed ipsum</p>
+                    <div class="meta-item-details style2">
+                        
+                        
+                        <div class="row">
+                            <div class="col-md-6 col-12 mb-3">
+                                <div class="item meta-price">
+                                    <span class="heading">Current Bid</span>
+                                    <div class="price">
+                                        <div class="price-box">
+                                            <h5> 4.89 ETH</h5>
+                                            <span>= $12.246</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="item count-down">
+                                    <span class="heading style-2">Countdown</span>
+                                    <span id="demo"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="sc-button loadmoree style bag fl-button pri-3" href="">
+                        <span class="qt">
+                            <span>
+                               <ion-icon name="bag-handle"></ion-icon>
+                            </span>
+                            <span>Place a bid</span>
+                        </span>
+                    </a>
+                    <div class="react-tabs">
+                        <ul class="nav react-tabs__tab-list mb-3 " role="tablist">
+                            <li role="presentation" class="active react-tabs__tab">
+                              <a class="active show " href="#hot-jobs" aria-controls="hot-jobs" role="tab" data-toggle="tab" aria-selected="true">Bid History</a>
+                            </li>
+                            <li role="presentation" class="react-tabs__tab"><a href="#recent-jobs" aria-controls="recent-jobs" role="tab" data-toggle="tab" class="" aria-selected="false">Info</a></li>
+                            <li role="presentation" class="react-tabs__tab"><a href="#popular-jobs" aria-controls="popular-jobs" role="tab" data-toggle="tab" class="" aria-selected="false">Provenance</a></li>
+                         
+                          </ul>
+                          <div class="tab-content text-left">
+                            <div role="tabpanel" class="tab-pane fade active show" id="hot-jobs">
+                             <div class="item-dit">
+                                <ul>
+                                    <li>
+                                        <div class="content">
+                                            <div class="client">
+                                                <div class="sc-author-box style-2" >
+                                                    <div class="author-avatar">
+                                                        <a href="">
+                                                            <img src="https://axiesreact.surielementor.com/static/media/avt-3.c03860ca1e2872296499.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="author-infor">
+                                                        <div class="name">
+                                                            <h6>
+                                                                <a href="">Mason Woodward</a>
+                                                            </h6>
+                                                            <span> place a bid</span>
+                                                        </div>
+                                                        <span class="time">8 hours ago</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pricee">
+                                                <h5>4.89 ETH</h5>
+                                                <span>= $12.246</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="content">
+                                            <div class="client">
+                                                <div class="sc-author-box style-2" >
+                                                    <div class="author-avatar">
+                                                        <a href="">
+                                                            <img src="https://axiesreact.surielementor.com/static/media/avt-1.71a23be871d509a23d2d.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="author-infor">
+                                                        <div class="name">
+                                                            <h6>
+                                                                <a href="">Mason Woodward</a>
+                                                            </h6>
+                                                            <span> place a bid</span>
+                                                        </div>
+                                                        <span class="time">8 hours ago</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pricee">
+                                                <h5>4.89 ETH</h5>
+                                                <span>= $12.246</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="content">
+                                            <div class="client">
+                                                <div class="sc-author-box style-2" >
+                                                    <div class="author-avatar">
+                                                        <a href="">
+                                                            <img src="https://axiesreact.surielementor.com/static/media/avt-5.cb38feefc0ea48ef8f43.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="author-infor">
+                                                        <div class="name">
+                                                            <h6>
+                                                                <a href="">Mason Woodward</a>
+                                                            </h6>
+                                                            <span> place a bid</span>
+                                                        </div>
+                                                        <span class="time">8 hours ago</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pricee">
+                                                <h5>4.89 ETH</h5>
+                                                <span>= $12.246</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="content">
+                                            <div class="client">
+                                                <div class="sc-author-box style-2" >
+                                                    <div class="author-avatar">
+                                                        <a href="">
+                                                            <img src="https://axiesreact.surielementor.com/static/media/avt-7.98fafb24331353eb43c0.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="author-infor">
+                                                        <div class="name">
+                                                            <h6>
+                                                                <a href="">Mason Woodward</a>
+                                                            </h6>
+                                                            <span> place a bid</span>
+                                                        </div>
+                                                        <span class="time">8 hours ago</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pricee">
+                                                <h5>4.89 ETH</h5>
+                                                <span>= $12.246</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="content">
+                                            <div class="client">
+                                                <div class="sc-author-box style-2" >
+                                                    <div class="author-avatar">
+                                                        <a href="">
+                                                            <img src="https://axiesreact.surielementor.com/static/media/avt-3.c03860ca1e2872296499.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="author-infor">
+                                                        <div class="name">
+                                                            <h6>
+                                                                <a href="">Mason Woodward</a>
+                                                            </h6>
+                                                            <span> place a bid</span>
+                                                        </div>
+                                                        <span class="time">8 hours ago</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pricee">
+                                                <h5>4.89 ETH</h5>
+                                                <span>= $12.246</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="content">
+                                            <div class="client">
+                                                <div class="sc-author-box style-2" >
+                                                    <div class="author-avatar">
+                                                        <a href="">
+                                                            <img src="https://axiesreact.surielementor.com/static/media/avt-3.c03860ca1e2872296499.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="author-infor">
+                                                        <div class="name">
+                                                            <h6>
+                                                                <a href="">Mason Woodward</a>
+                                                            </h6>
+                                                            <span> place a bid</span>
+                                                        </div>
+                                                        <span class="time">8 hours ago</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pricee">
+                                                <h5>4.89 ETH</h5>
+                                                <span>= $12.246</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                </ul>
+                             </div>
+                            </div><!-- /.tab-pane -->
+                            <div role="tabpanel" class="tab-pane fade in" id="recent-jobs">
+                              <ul>
+                                <li>
+                                    <div class="content">
+                                        <div class="client">
+                                            <div class="sc-author-box style-2" >
+                                                <div class="author-avatar">
+                                                    <a href="">
+                                                        <img src="https://axiesreact.surielementor.com/static/media/avt-3.c03860ca1e2872296499.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="author-infor">
+                                                    <div class="name">
+                                                        <h6>
+                                                            <a href="">Mason Woodward</a>
+                                                        </h6>
+                                                        <span> place a bid</span>
+                                                    </div>
+                                                    <span class="time">8 hours ago</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pricee">
+                                            <h5>4.89 ETH</h5>
+                                            <span>= $12.246</span>
+                                        </div>
+                                    </div>
+                                </li>
+                              </ul>
+                            </div><!-- /.tab-pane -->
+                            <div role="tabpanel" class="tab-pane fade in" id="popular-jobs">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                            </div>
+                           
+                          </div>		
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="container-fluid tf-section py-y live-auctions bgl border-none">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="heading-live-auctions mb-5">
+              <h2 class="tf-title">Live Auctions</h2>
+            </div>
+          </div>
+        </div>
+        <div class="owl-carousel owl-2">
+          <div class="media-29101">
+            <div class="cardd-item">
+              <div class="slider-item">
+                <div class="sc-card-product">
+                  <div class="card-media">
+                    <a href="">
+                      <img
+                        src="https://axiesreact.surielementor.com/static/media/image-box-10.f3abb5b73887d54521fb.jpg"
+                        alt=""
+                      />
+                    </a>
+                    <a href="" class="wishlist-button">
+                      <i class="fa-regular fa-heart"></i>
+                      <span class="number-like">220</span>
+                    </a>
+                    <div class="featured-countdown">
+                      <span class="slogan">
+                        <ion-icon name="flame"></ion-icon>
+                      </span>
+                      <span id="demo"> </span>
+                    </div>
+                    <div class="button-place-bid">
+                      <button
+                        class="sc-button style-place-bid style bag fl-button pri-3"
+                      >
+                        <span class="yt">
+                          <span><ion-icon name="bag-handle"></ion-icon></span>
+                          <span>Place Bid</span>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="card-title">
+                    <h5>
+                      <a href="">Triumphant Awakening Contemplates </a>
+                    </h5>
+                    <div class="tags">bsc</div>
+                  </div>
+                  <div class="meta-info alone">
+                    <div class="author">
+                      <div class="avatar">
+                        <img
+                          src="data:image/jpeg;base64,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"
+                          alt=""
+                        />
+                      </div>
+                      <div class="info">
+                        <span>Creator</span>
+                        <h6>
+                          <a href="">Trista Francis</a>
+                        </h6>
+                      </div>
+                    </div>
+                    <div class="pricee">
+                      <span>Current Bid</span>
+                      <h5>4.89 ETH</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="media-29101">
+            <div class="cardd-item">
+              <div class="slider-item">
+                <div class="sc-card-product">
+                  <div class="card-media">
+                    <a href="">
+                      <img
+                        src="https://axiesreact.surielementor.com/static/media/card-item8.7eabfc1f4f02ba299fe9.jpg"
+                        alt=""
+                      />
+                    </a>
+                    <a href="" class="wishlist-button">
+                      <i class="fa-regular fa-heart"></i>
+                      <span class="number-like">220</span>
+                    </a>
+                    <div class="featured-countdown">
+                      <span class="slogan">
+                        <ion-icon name="flame"></ion-icon>
+                      </span>
+                      <span id="demo"> </span>
+                    </div>
+                    <div class="button-place-bid">
+                      <button
+                        class="sc-button style-place-bid style bag fl-button pri-3"
+                      >
+                        <span class="yt">
+                          <span><ion-icon name="bag-handle"></ion-icon></span>
+                          <span>Place Bid</span>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="card-title">
+                    <h5>
+                      <a href="">Triumphant Awakening Contemplates </a>
+                    </h5>
+                    <div class="tags">bsc</div>
+                  </div>
+                  <div class="meta-info alone">
+                    <div class="author">
+                      <div class="avatar">
+                        <img
+                          src="data:image/jpeg;base64,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"
+                          alt=""
+                        />
+                      </div>
+                      <div class="info">
+                        <span>Creator</span>
+                        <h6>
+                          <a href="">Trista Francis</a>
+                        </h6>
+                      </div>
+                    </div>
+                    <div class="pricee">
+                      <span>Current Bid</span>
+                      <h5>4.89 ETH</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="media-29101">
+            <div class="cardd-item">
+              <div class="slider-item">
+                <div class="sc-card-product">
+                  <div class="card-media">
+                    <a href="">
+                      <img
+                        src="https://axiesreact.surielementor.com/static/media/card-item-11.b852cb3ac79476a86817.jpg"
+                        alt=""
+                      />
+                    </a>
+                    <a href="" class="wishlist-button">
+                      <i class="fa-regular fa-heart"></i>
+                      <span class="number-like">220</span>
+                    </a>
+                    <div class="featured-countdown">
+                      <span class="slogan">
+                        <ion-icon name="flame"></ion-icon>
+                      </span>
+                      <span id="demo"> </span>
+                    </div>
+                    <div class="button-place-bid">
+                      <button
+                        class="sc-button style-place-bid style bag fl-button pri-3"
+                      >
+                        <span class="yt">
+                          <span><ion-icon name="bag-handle"></ion-icon></span>
+                          <span>Place Bid</span>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="card-title">
+                    <h5>
+                      <a href="">Triumphant Awakening Contemplates </a>
+                    </h5>
+                    <div class="tags">bsc</div>
+                  </div>
+                  <div class="meta-info alone">
+                    <div class="author">
+                      <div class="avatar">
+                        <img
+                          src="data:image/jpeg;base64,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"
+                          alt=""
+                        />
+                      </div>
+                      <div class="info">
+                        <span>Creator</span>
+                        <h6>
+                          <a href="">Trista Francis</a>
+                        </h6>
+                      </div>
+                    </div>
+                    <div class="pricee">
+                      <span>Current Bid</span>
+                      <h5>4.89 ETH</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="media-29101">
+            <div class="cardd-item">
+              <div class="slider-item">
+                <div class="sc-card-product">
+                  <div class="card-media">
+                    <a href="">
+                      <img
+                        src="https://axiesreact.surielementor.com/static/media/image-box-21.dfc4bfc26b7449a3d88d.jpg"
+                        alt=""
+                      />
+                    </a>
+                    <a href="" class="wishlist-button">
+                      <i class="fa-regular fa-heart"></i>
+                      <span class="number-like">220</span>
+                    </a>
+                    <div class="featured-countdown">
+                      <span class="slogan">
+                        <ion-icon name="flame"></ion-icon>
+                      </span>
+                      <span id="demo"> </span>
+                    </div>
+                    <div class="button-place-bid">
+                      <button
+                        class="sc-button style-place-bid style bag fl-button pri-3"
+                      >
+                        <span class="yt">
+                          <span><ion-icon name="bag-handle"></ion-icon></span>
+                          <span>Place Bid</span>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="card-title">
+                    <h5>
+                      <a href="">Triumphant Awakening Contemplates </a>
+                    </h5>
+                    <div class="tags">bsc</div>
+                  </div>
+                  <div class="meta-info alone">
+                    <div class="author">
+                      <div class="avatar">
+                        <img
+                          src="data:image/jpeg;base64,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"
+                          alt=""
+                        />
+                      </div>
+                      <div class="info">
+                        <span>Creator</span>
+                        <h6>
+                          <a href="">Trista Francis</a>
+                        </h6>
+                      </div>
+                    </div>
+                    <div class="pricee">
+                      <span>Current Bid</span>
+                      <h5>4.89 ETH</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="w-100 py-4 flex-shrink-0">
+        <div class="container-fluid py-4">
+          <div class="row gy-4 gx-5">
+            <div class="col-lg-3 col-md-12">
+              <div class="log">
+                <a href="">
+                  <img
+                    class="logo-dark"
+                    id="logo_footer"
+                    src="data:image/png;base64,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"
+                    alt="nft-gaming"
+                  />
+                  <img
+                    class="logo-light"
+                    id="logo_footer"
+                    src="data:image/png;base64,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"
+                    alt="nft-gaming"
+                  />
+                </a>
+              </div>
+              <p class="sub-widget-logo">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt.
+              </p>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-5 col-5">
+              <div class="widget widget-menu style-1">
+                <h5 class="title-widget">My Account</h5>
+                <ul>
+                  <li><a href="/authors-01">Authors</a></li>
+                  <li><a href="/wallet-connect">Collection</a></li>
+                  <li><a href="/edit-profile">Author Profile</a></li>
+                  <li><a href="/create-item">Create Item</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-5 col-5">
+              <div class="widget widget-menu style-1">
+                <h5 class="title-widget">Resources</h5>
+                <ul>
+                  <li><a href="/authors-01">Help & Support</a></li>
+                  <li><a href="/wallet-connect">Live Auctions</a></li>
+                  <li><a href="/edit-profile">Item Details</a></li>
+                  <li><a href="/create-item">Activity</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-5 col-5">
+              <div class="widget widget-menu style-1">
+                <h5 class="title-widget">Company</h5>
+                <ul>
+                  <li><a href="/authors-01">Explore</a></li>
+                  <li><a href="/wallet-connect">Contact Us</a></li>
+                  <li><a href="/edit-profile">Our Blog</a></li>
+                  <li><a href="/create-item">FAQ</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="widget widget-subcribe">
+                <h5 class="title-widget">Subscribe Us</h5>
+                <div class="form-subcribe">
+                  <form action="" class="form-submit">
+                    <input
+                      name="email"
+                      class="email"
+                      type="email"
+                      placeholder="info@yourgmail.com"
+                      required=""
+                    />
+                  </form>
+                </div>
+                <div class="widget-social style-1 mt-4">
+                  <ul>
+                    <li>
+                      <a href="">
+                        <i class="fab fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <i class="fab fa-facebook"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <i class="fab fa-telegram-plane"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <i class="fab fa-youtube"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <script>
+        var countDownDate = new Date("July 22, 2022 2:37:25").getTime();
+  
+        var x = setInterval(function () {
+          var now = new Date().getTime();
+  
+          var distance = countDownDate - now;
+  
+          var hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+          var x = document.querySelectorAll("#demo");
+  
+          for (let i = 0; i <= x.length - 1; i++) {
+            x[i].innerHTML = hours + ":" + minutes + ":" + seconds;
+            if (distance < 0) {
+              clearInterval(x[i]);
+              x[i].innerHTML = "EXPIRED";
+            }
+          }
+        }, 1000);
+      </script>
+      <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
