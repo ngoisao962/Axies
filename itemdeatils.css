@@ -410,7 +410,7 @@ li .author-infor .name span {
   overflow: hidden;
   overflow-y: auto;
   padding-top: 1px;
-  padding-right: 60px;
+  padding-right: 10px;
 }
 .item-dit::-webkit-scrollbar{
   width: 5px;
