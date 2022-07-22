@@ -933,7 +933,7 @@ input[type="number"],input[type="text"]{
   padding: 13px 15px;
   width: 100%;
   background: transparent !important;
-  color: #d0d0d1;
+  color: #fff;
 }
 input[type="text"]:focus,input[type="number"]:focus{
   border: 1px solid #8A8AA0 !important;
