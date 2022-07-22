@@ -8,7 +8,7 @@ $(function() {
             stagePadding: 0,
             margin: 20,
             smartSpeed: 1000,
-            autoplay: false,
+            autoplay: true,
             nav: true,
             dots: true,
             pauseOnHover: false,
@@ -92,7 +92,7 @@ $(function() {
         stagePadding: 0,
         margin: 20,
         smartSpeed: 1000,
-        autoplay: false,
+        autoplay: true,
         nav: true,
         dots: true,
         pauseOnHover: false,
@@ -113,3 +113,26 @@ $(function() {
 }
 
 })
+var countDownDate = new Date("July 23, 2022 2:37:25").getTime();
+
+      var x = setInterval(function () {
+        var now = new Date().getTime();
+
+        var distance = countDownDate - now;
+
+        var hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        var x = document.querySelectorAll("#demo");
+
+        for (let i = 0; i <= x.length - 1; i++) {
+          x[i].innerHTML = hours + ":" + minutes + ":" + seconds;
+          if (distance < 0) {
+            clearInterval(x[i]);
+            x[i].innerHTML = "EXPIRED";
+          }
+        }
+      }, 1000);
