@@ -155,7 +155,7 @@
                   </div>
                   <div class="button-place-bid">
                     <button
-                      class="sc-button style-place-bid style bag fl-button pri-3"
+                      class="sc-button style-place-bid style bag fl-button pri-3" data-toggle="modal" data-target="#exampleModal"
                     >
                       <span class="yt">
                         <span><ion-icon name="bag-handle"></ion-icon></span>
@@ -1444,7 +1444,33 @@
         </div>
       </div>
     </div>
-
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span class="text-white" aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body pd-40">
+            <h3 class="text-center">Place a Bid</h3>
+            <p class="text-center">
+              You must bid at least 
+              <span class="price color-popup">4.89 ETH</span>
+            </p>
+            <input type="text" class="form-control" placeholder="00.00 ETH">
+            <p class="pt-2">Enter quantity. <span class="">5 available</span></p>
+            <input type="number" class="form-control" placeholder="1">
+            <div class="d-flex justify-content-between pt-2"><p> You must bid at least:</p><p class="text-right price color-popup"> 4.89 ETH </p></div>
+            <div class="d-flex justify-content-between"><p> Service free:</p><p class="text-right price color-popup"> 0,89 ETH </p></div>
+            <div class="d-flex justify-content-between"><p> Total bid amount:</p><p class="text-right price color-popup"> 4 ETH </p></div>
+            <a class="btn btn-primary d-block" href=""> Place a bid</a>
+          </div>
+          
+        </div>
+      </div>
+    </div>
     <footer class="w-100 py-4 flex-shrink-0">
       <div class="container-fluid py-4">
         <div class="row gy-4 gx-5">
